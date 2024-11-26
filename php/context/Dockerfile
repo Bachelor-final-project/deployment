@@ -19,3 +19,9 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # ENTRYPOINT ["start"]
+
+COPY start /usr/local/bin
+RUN chmod +x /usr/local/bin/start
+
+WORKDIR /var/www/html/backend
+ENTRYPOINT [ "start" ]

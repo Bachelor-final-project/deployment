@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+composer update
+
+php artisan optimize
+php artisan key:generate
+php artisan storage:link
+chmod 777 storage -R
+
+php-fpm

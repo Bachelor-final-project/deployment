@@ -5,21 +5,21 @@ services:
       context: .
       dockerfile: nginx/Dockerfile
     ports: 
-      - "8080:80"
+      - "8087:80"
     networks:
       - internal
     volumes:
-      - ../application/:/var/www/html/
+      - ../backend/:/var/www/html/backend
       - ./logs/nginx:/var/log/nginx/
     container_name: nginx
   php:
     build:
-      context: .
-      dockerfile: php/Dockerfile
+      context: ./php/context
+      dockerfile: Dockerfile
     networks:
       - internal
     volumes:
-      - ../application/:/var/www/html/
+      - ../backend/:/var/www/html/backend
       - ./logs/php.log:/var/log/fpm-php.www.log
     container_name: php
     expose:
@@ -33,12 +33,27 @@ services:
      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
-      MYSQL_USER: 'root'
-      MYSQL_PASS: 'root'
+      MYSQL_USER: 'HumanitarianAids'
+      MYSQL_PASSWORD: 'HumanitarianAids'
+      MYSQL_DATABASE: 'HumanitarianAids'
     volumes:
       - ./db-data:/var/lib/mysql
     networks:
       - internal
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    depends_on:
+      - mysql
+    networks:
+      - internal
+
 networks:
   internal:
     driver: bridge
