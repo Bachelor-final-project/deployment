@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-composer update
+# composer update
 
 php artisan optimize
 php artisan key:generate
