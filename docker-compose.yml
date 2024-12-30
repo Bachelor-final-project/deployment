@@ -6,6 +6,7 @@ services:
       dockerfile: nginx/Dockerfile
     ports: 
       - "8087:80"
+      - "5173:5173"
     networks:
       - internal
     volumes:
@@ -23,7 +24,8 @@ services:
       - ./logs/php.log:/var/log/fpm-php.www.log
     container_name: php
     expose:
-      - "9000"
+      - 9000
+      - 5173:5173 # Expose Vite dev server port
   mysql:
     container_name: db
     restart: always
