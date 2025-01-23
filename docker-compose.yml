@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: nginx/Dockerfile
-    ports: 
+    ports:
       - "8087:80"
       - "5173:5173"
     networks:
@@ -29,17 +29,21 @@ services:
   mysql:
     container_name: db
     restart: always
-    image: mysql:latest
+    build:
+      context: ./db/context
+      dockerfile: Dockerfile
     platform: linux/x86_64
     ports:
-     - "3306:3306"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
       MYSQL_USER: 'HumanitarianAids'
       MYSQL_PASSWORD: 'HumanitarianAids'
       MYSQL_DATABASE: 'HumanitarianAids'
     volumes:
-      - ./db-data:/var/lib/mysql
+      - ./db_data/data:/var/lib/mysql
+      - ../db_backups/full_backup:/home/backups/full_backups # Volume for storing backups
+      - ../db_backups/binary_logs:/home/backups/binary_logs # Volume for storing backups
     networks:
       - internal
   phpmyadmin:

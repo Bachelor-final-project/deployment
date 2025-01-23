@@ -1,0 +1,1 @@
+mkdir -p /home/backups/full_backups /home/backups/binary_logs
