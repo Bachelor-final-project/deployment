@@ -2798,3 +2798,36 @@
 2025/01/20 20:33:09 [warn] 32#32: *7582 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000048, client: 172.20.0.1, server: , request: "POST /attachment HTTP/1.1", host: "172.24.146.60:8087", referrer: "http://172.24.146.60:8087/document"
 2025/01/20 20:34:45 [warn] 32#32: *7585 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000049, client: 172.20.0.1, server: , request: "POST /attachment HTTP/1.1", host: "172.24.146.60:8087", referrer: "http://172.24.146.60:8087/document"
 2025/01/22 13:51:25 [warn] 29#29: *24195 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000050, client: 172.20.0.1, server: , request: "POST /proposal HTTP/1.1", host: "172.24.146.60:8087", referrer: "http://172.24.146.60:8087/proposal/create"
+2025/01/26 20:47:59 [error] 29#29: *39255 connect() failed (111: Connection refused) while connecting to upstream, client: 172.20.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.20.0.4:5173/", host: "localhost:5173", referrer: "http://172.24.146.60:8087/"
+2025/01/28 22:35:13 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/01/28 22:35:13 [notice] 29#29: gracefully shutting down
+2025/01/28 22:35:13 [notice] 30#30: gracefully shutting down
+2025/01/28 22:35:13 [notice] 31#31: gracefully shutting down
+2025/01/28 22:35:13 [notice] 31#31: exiting
+2025/01/28 22:35:13 [notice] 29#29: exiting
+2025/01/28 22:35:13 [notice] 32#32: gracefully shutting down
+2025/01/28 22:35:13 [notice] 32#32: exiting
+2025/01/28 22:35:13 [notice] 32#32: exit
+2025/01/28 22:35:13 [notice] 31#31: exit
+2025/01/28 22:35:13 [notice] 29#29: exit
+2025/01/28 22:35:13 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/01/28 22:35:13 [notice] 1#1: worker process 29 exited with code 0
+2025/01/28 22:35:13 [notice] 1#1: signal 29 (SIGIO) received
+2025/01/28 22:35:14 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2025/01/28 22:35:14 [notice] 1#1: worker process 32 exited with code 0
+2025/01/28 22:35:14 [notice] 1#1: signal 29 (SIGIO) received
+2025/01/28 22:35:14 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/01/28 22:35:14 [notice] 1#1: worker process 31 exited with code 0
+2025/01/28 22:35:14 [notice] 1#1: signal 29 (SIGIO) received
+2025/01/28 22:39:04 [notice] 1#1: using the "epoll" event method
+2025/01/28 22:39:04 [notice] 1#1: nginx/1.27.3
+2025/01/28 22:39:04 [notice] 1#1: built by gcc 13.2.1 20240309 (Alpine 13.2.1_git20240309) 
+2025/01/28 22:39:04 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2025/01/28 22:39:04 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/01/28 22:39:04 [notice] 1#1: start worker processes
+2025/01/28 22:39:04 [notice] 1#1: start worker process 30
+2025/01/28 22:39:04 [notice] 1#1: start worker process 31
+2025/01/28 22:39:04 [notice] 1#1: start worker process 32
+2025/01/28 22:39:04 [notice] 1#1: start worker process 33
+2025/01/29 22:22:00 [warn] 32#32: *7817 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.20.0.1, server: , request: "POST /proposal/8 HTTP/1.1", host: "172.24.146.60:8087", referrer: "http://172.24.146.60:8087/proposal"
+2025/01/29 22:48:02 [warn] 32#32: *7851 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.20.0.1, server: , request: "POST /proposal/1 HTTP/1.1", host: "172.24.146.60:8087", referrer: "http://172.24.146.60:8087/proposal"
